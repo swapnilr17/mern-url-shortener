@@ -2,7 +2,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+**/*node_modules
 /.pnp
 .pnp.js
 
@@ -10,7 +10,7 @@
 /coverage
 
 # production
-/build
+**/*build
 
 # misc
 .DS_Store
@@ -63,7 +63,7 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
+**/*node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -94,8 +94,8 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
-.env.test
+**/*.env
+**/*.env.test
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
