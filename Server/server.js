@@ -1,10 +1,11 @@
 require('dotenv').config();
 const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const app = express();
+const mongoose = require('mongoose');
+const bodyParser = require("body-parser");
 const ShortUrl = require("./models/shortUrl");
 const cors = require('cors');
+
 app.use(express.urlencoded({extended: true}))
 
 const username = process.env.username;
@@ -12,6 +13,8 @@ const password = process.env.password;
 
 app.use(cors());
 mongoose.connect('mongodb+srv://'+username+':'+password+'@database.kdl58.mongodb.net/urlShortener?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true });
+
+
 app.get('/get',async(req,res)=>{
     const shortUrls = await ShortUrl.find();
     res.json(shortUrls);

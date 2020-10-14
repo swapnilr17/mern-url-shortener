@@ -9,13 +9,12 @@ useEffect(() => {
 }, [])
 
 const loadUrls = async ()=>{
-    const result = await axios.get("https://urlst-backend.herokuapp.com/get");
+    const result = await axios.get("http://localhost:5000/get");
     setUrls(result.data.reverse());
-    console.log(result.data);
 }
 return(
     <div className="container">
-<table className="table table-striped table-hover shadow p-3 mb-5 bg-white rounded">
+<table className="table table-striped table-hover shadow p-3 mb-5 bg-white rounded table-responsive-sm">
         <thead className="thead-dark">
             <tr>
                 <th>#</th>
@@ -30,7 +29,7 @@ return(
                 <tr>
                 <td>{index+1}</td>
             <td><a href = {url.url}>{url.url}</a></td>
-            <td><a href = {`https://urlst-backend.herokuapp.com/${url.shorturl}`}>{`https://urlst-backend.herokuapp.com/${url.shorturl}`}</a></td>
+            <td><a href = {`https://urlst-backend.herokuapp.com/${url.shorturl}`}>{`${url.shorturl}`}</a></td>
             <td>{url.clicks}</td>
             </tr>
             ))

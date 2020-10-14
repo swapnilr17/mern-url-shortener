@@ -16,7 +16,7 @@ function Shrink() {
 
     const onSubmit= async e =>{
         e.preventDefault();
-        await axios.post(`https://urlst-backend.herokuapp.com/post/?url=${posturls.url}`);
+        await axios.post(`https://localhost:5000/post/?url=${posturls.url}`);
     }
   return (
     <div className="container">
